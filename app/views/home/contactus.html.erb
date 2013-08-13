@@ -1,0 +1,95 @@
+
+<% if flash[:notice] -%>
+  <div class = "alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+<div class="container" style="margin-top: 2%;margin-bottom: 2%;">
+    <div class="row">
+		      <div class="span4" style="background-color: #f1f1f1;border-radius: 12px;text-align: center;">
+		      	 <br/><br/>
+
+		         <p style="text-align: center;font-size: 14px;font-weight: bold;">GET IN TOUCH WITH US </p><br/>
+
+		         <div class="row">
+			         <div class="span3" style="text-align: left;margin-left: 33%;">
+
+			         Rails Galaxy,<br/>
+			         Beside Aditya Trade center,<br/>
+			         Ameerpet,<br/>
+			         Hyderabad-500018.
+
+			         	
+			         </div>
+			         
+		         </div>
+
+		           <br/><br/>
+
+
+		        <div class="row">
+			         <div class="span3" style="padding-left: 10%;">
+
+		          <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Aditya+Trade+Center,+Satyam+Theatre+Road,+Ameerpet,+Hyderabad,+Andhra+Pradesh,+India&amp;aq=0&amp;oq=adit&amp;sll=37.0625,-95.677068&amp;sspn=38.638819,80.859375&amp;t=h&amp;ie=UTF8&amp;hq=Aditya+Trade+Center,&amp;hnear=Satyam+Theatre+Rd,+Ameerpet,+Hyderabad,+Andhra+Pradesh,+India&amp;ll=17.436599,78.446567&amp;spn=0.007165,0.00912&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Aditya+Trade+Center,+Satyam+Theatre+Road,+Ameerpet,+Hyderabad,+Andhra+Pradesh,+India&amp;aq=0&amp;oq=adit&amp;sll=37.0625,-95.677068&amp;sspn=38.638819,80.859375&amp;t=h&amp;ie=UTF8&amp;hq=Aditya+Trade+Center,&amp;hnear=Satyam+Theatre+Rd,+Ameerpet,+Hyderabad,+Andhra+Pradesh,+India&amp;ll=17.436599,78.446567&amp;spn=0.007165,0.00912&amp;z=16&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+		           </div>
+			         
+		         </div>
+		      </div>
+
+ 
+
+        <div class="span8" style="text-align: justify;">
+        <div style="margin-left: 26%;">
+        <h2>Contact Us </h2><br/>
+ 			  <%= form_tag  contactus_path  do  %>
+		             <table>
+		             	<tr>
+		             		<td style="width: 150px;"><%= label_tag :name,"Name" %></td>
+		             		<td><%= text_field_tag :name %></td>
+		             	</tr>
+		             	<tr>
+		             		<td><%= label_tag :email,"e-mail" %></td>
+		             		<td><%= text_field_tag :email %></td>
+		             	</tr>
+		             	<tr>
+		             		<td><%= label_tag :contactnum,"Contact Num" %></td>
+		             		<td><%= text_field_tag :contactnum %></td>
+		             	</tr>
+		             	<tr>
+		             		<td><%= label_tag :comment,"Comment" %></td>
+		             		<td><%= text_area_tag :comment %><br/></td>
+		             	</tr>
+		             	<tr><td><%= submit_tag "Submit"%></td></tr>
+		             </table>
+ 			
+ 			  <% end %>
+
+ 			  </div>
+        </div>
+
+        </div><br/><br/><br/><br/><br/><br/>
+      
+    </div>
+
+<script type="text/javascript">
+	
+$(document).ready(function (){
+
+$('form').submit(function() {  
+	alert("i got call");
+    var valuesToSubmit = $(this).serialize();
+    $.ajax({
+        url: $(this).attr('action'), //sumbits it to the given url of the form
+        data: valuesToSubmit,
+        dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
+    }).success(function(json){
+        //act on result.
+       
+    });
+    
+    return false; // prevents normal behaviour
+});
+
+}); // end of document read function
+
+
+</script>
