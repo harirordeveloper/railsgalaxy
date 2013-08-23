@@ -8,6 +8,29 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+
+
+#accordion{list-style:none;margin:10px 0px 0px 83px;padding:0;min-height:168px;width:100%;overflow:hidden;}
+.panel{float:left;display:block;height:169px;width:35px;overflow:hidden;color:#666666;text-decoration:none;font-size:16px;line-height:1.5em}
+.panel.active{width:850px;}
+.panel.active .arrow{display:block;}
+.panel.active .pink{background-position:-35px 0;}
+
+.panelContent{padding:0 0 0 35px;height:169px;width:825px;font-size:15px;line-height:19px;}
+.pink{width:35px;height:169px;float:left;background:url("databases/tab-front-end.png") no-repeat 0 0;border-right:2px solid #ffffff;cursor:pointer;position:relative;}
+.arrow{background:url("databases/arrow-tab-active.png") no-repeat 0 0;position:absolute;top:10px;right:-7px;width:8px;height:17px;display:none;}
+.dark1{background:url("databases/tab-database.png") no-repeat 0 0;}
+.dark2{background:url("databases/tab-tools.png") no-repeat 0 0;}
+.dark3{background:url("databases/tab-qa.png") no-repeat 0 0;}
+.dark4{background:url("databases/tab-hosting.png") no-repeat 0 0;}
+.dark5{background:url("databases/tab-collaborations.png") no-repeat 0 0;}
+.last{border:none}
+
+.side-menu{ position:fixed; right:0; top: 35%; z-index: 999; width: 50px;}
+#left_menu {background: url("databases/get-in-bg.png") no-repeat; display: block; width:50px; height:200px;}
+#call_num {background: url(../images/get-in-call-bg.png) no-repeat; display: block; width:50px; height:200px;}
+
+
 article,
 aside,
 details,
@@ -5060,7 +5083,7 @@ a.badge:hover {
 .banner{
   background-color: #00bbe4;/*#eb583c;*/
 	/*background:url(../img/banner.png) repeat-x 50% 0 #2f3024;*/
-	height: 550px !important;
+	height: 350px !important;
 	margin:0 auto;
 	color:#fff;
 	text-shadow:0 -1px 0 #000;
