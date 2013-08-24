@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  caches_page :index, :aboutus,:products,:services
   def index
   end
   def aboutus
